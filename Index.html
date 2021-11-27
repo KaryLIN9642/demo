@@ -1,303 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Contact Kary</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
-        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
-        crossorigin="anonymous">
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
-        @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
-
-        * {
-            box-sizing: border-box;
-        }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>申請資訊</title>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 
         body {
-            margin: 0;
-            font-family: 'Poiret One', cursive;
+            font-family: 'Abel', sans-serif, "微軟正黑體";
+            margin: 2.5em 5em;
+            border: 10px;
+            background: #e9ecef;
         }
 
-        input {
-            font-family: 'Poiret One', cursive;
+        hr {
+            height: .01em;
+            background: currentColor;
         }
 
-        input,
-        button,
-        textarea {
-            outline: none;
+        h1 {
+            font-family: 'Russo One', sans-serif;
+            font-size: 36px;
+            font-weight: bold;
+            color: #20293a;
+            text-align: center;
         }
 
-        /* ---------- Home ---------- */
-        .contact .logo {
-            position: absolute;
-            top: 40px;
-            left: 100px;
-            font-size: 2.5em;
-            color: #fff;
-            text-transform: uppercase;
-            font-weight: 700;
+        ul {
+            list-style-position: outside;
+            text-align: flex-start;
+            padding-left: 3em;
+            line-height: 1.8;
+            font-size: 24px;
+            color: #283b42;
+        }
+
+        p {
+            color: #034b61;
+            font-size: 20px;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            text-align: justify;
+            text-indent: 2em;
+        }
+
+        a {
+            color: #BB496B;
             text-decoration: none;
-            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
-            transition: 0.5s;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .contact .logo:hover {
-            transform: scale(1.1);
-            filter: drop-shadow(1px 8px 30px #b1afaf);
-        }
-
-        /* ---------- Animation ---------- */
-        .contact {
-            min-height: 100vh;
-            width: 100%;
-            background-image: url(bg.jpg);
-            background-size: cover;
-            background-position: center;
-            padding: 20px;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .contact .animate {
             display: inline-block;
-            width: calc(0.63em * var(--i));
-            height: calc(0.63em * var(--i));
-            border-radius: calc(0.32em * var(--i));
-            border: 20x solid #fff5;
-            position: absolute;
-            top: calc(6% * var(--i));
-            left: calc(10% * var(--i));
-            box-shadow: 0 2px 6px #0002, 0 4px 16px #0004;
-
-            animation-name: move;
-            animation-iteration-count: infinite;
-            animation-delay: calc(0.3s * var(--i));
-            animation-duration: calc(5s * var(--i));
-            animation-fill-mode: both;
         }
 
-        .contact .animate:nth-child(1) {
-            background-color: #968586;
+        a:hover {
+            color: #F3b749;
+            filter: drop-shadow(2px 8px 30px #b1afaf);
         }
 
-        .contact .animate:nth-child(2) {
-            background-color: #7aa4d5;
-        }
-
-        .contact .animate:nth-child(3) {
-            background-color: #c78c49;
-        }
-
-        .contact .animate:nth-child(4) {
-            background-color: #7c91a8;
-        }
-
-        .contact .animate:nth-child(5) {
-            background-color: #112035;
-        }
-
-        /* ---------- Form ---------- */
-        .contact .contactForm {
-            display: block;
-            max-width: 400px;
-            width: 100%;
-            padding: 20px 25px;
-            background-image: linear-gradient(135deg, #fff3, #fff1);
-            /*線性漸層語法：background: linear-gradient(方向,顏色1,顏色2, ......), 
-                線性漸層的方向可以是由上而下漸層、由下而上漸層、由左而右或由右而左漸層，甚至可以設定漸層角度
-                徑向漸層語法：background: radial-gradient(ellipse 或 circle,顏色1,顏色2, ......);
-                徑向漸層的部份則可以使用預設的橢圓形（ellipse）或自定為圓形（circle）漸層效果*/
-            backdrop-filter: blur(10px);
-            border-radius: 0.75em;
-            border: 2px outset #fff5;
-            position: relative;
-            box-shadow: 0 2px 6px #0002 0 5px 16px #0005;
-        }
-
-        .contactForm h1 {
-            font-size: 1.75em;
-            color: #7aa4d5;
-        }
-
-        .contact .contactForm .group {
-            position: relative;
-            margin-top: 30px;
-        }
-
-        .contact .contactForm .group input,
-        textarea {
-            background-color: #0002;
-            border-radius: 0.35em;
-            padding: 5px 25px 5px 10px;
-            display: block;
-            width: 100%;
-            box-shadow: -1px 1px 2px #0002 inset;
-            color: #fff;
-            font-size: 1.5em;
-            border: 1px outset #fff5;
-            transition: border-radius 0.3s;
-        }
-
-        .contact .contactForm .group label {
-            position: absolute;
-            pointer-events: none;
-            top: 50%;
-            left: 10px;
-            transform: translateY(-50%);
-            font-size: 14px;
-            color: #8e9eb2;
-            transition-property: top, left, color, font-size;
-            transition: 0.3s;
-        }
-
-        .contact .contactForm .group input:valid+label,
-        .contact .contactForm .group input:focus+label,
-        .contact .contactForm .group textarea:focus+label {
-            top: -14px;
-            left: 0;
-            color: #fff;
-            font-size: 0.8em;
-        }
-
-        .contact .contactForm .group .icon {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #fffe;
-            text-shadow: 0 0 1px #0007;
-        }
-
-        .contact .contactForm button {
-            border: 1px outset #ffffff78;
-            display: inline-block;
-            background: linear-gradient(45deg, #ffffff05, #ffffff61);
-            padding: 8px 20px;
-            border-radius: 50%;
-            color: #fff;
-            font-size: 1em;
-            box-shadow: 0 0 0 4px #fff2;
-            margin: 20px 10px;
-            cursor: pointer;
-            transition-property: transform, background;
-            transition: 0.3s ease-in-out;
-        }
-
-        .contact .contactForm button:hover {
-            background: linear-gradient(-45deg, #ffffff05, #ffffff61);
-        }
-
-        .contact .contactForm button:active {
-            transform: scale(0.95);
-        }
-
-        .contact .contactForm .slogan {
-            text-align: right;
-        }
-
-        .contact .contactForm .slogan p {
-            display: inline-block;
-            padding: 0 10px;
-            text-decoration: none;
-            background: #0001;
-            color: #7aa4d5;
-            font-size: 1.5em;
-            text-shadow: 1px 1px 1px #0002;
-            transition: color 0.3s;
-            font-family: 'Sacramento', cursive;
-        }
-
-        @keyframes move {
-
-            0%,
-            100% {
-                transform: translate(0, 0);
+        @media (max-width:600px) {
+            body {
+                flex-direction: column;
+                margin: 1.5em;
+                padding: 0.5em;
             }
 
-            10%,
-            50% {
-                transform: translate(200%, 400%);
-            }
-
-            25%,
-            75% {
-                transform: translate(300%, 500%);
-            }
-
-            20%,
-            40%,
-            80% {
-                transform: translate(500%, 300%);
-            }
-
-            30%,
-            60%,
-            90% {
-                transform: translate(400%, 200%);
+            ul {
+                padding: 1.5em;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="contact">
-        <!---------- Animation ---------->
-        <span class="animate" style="--i:3;"></span>
-        <span class="animate" style="--i:5;"></span>
-        <span class="animate" style="--i:2;"></span>
-        <span class="animate" style="--i:4;"></span>
-        <span class="animate" style="--i:6;"></span>
+    <h1>WeHelp 軟體工程師扶持計畫-申請資訊</h1>
+    <br>
+    <hr>
 
-        <!---------- Home ---------->
-        <a href="../01Home/Index.html" class="logo">Kary's</a>
+    <ul>
+        <li>兩百字內的個人簡介</li>
+        <p>您好，我是林千貴，屏東科技大學土木工程系碩士班畢業，畢業後從事本科系相關工作將近20年，最後一份工作做了13年，主要是解決客戶所有與材料，試驗相關的技術問題，工作內容需要整合分析與預估趨勢，由於本身邏輯整合能力不錯，但欠缺程式設計的能力，也因為這份工作讓我對於學習程式語言產生濃厚的興趣，也很更喜歡整合分析的工作，會利用Excel做出有質感的互動式分析引擎。近20年的工作經驗養成我可獨立獨自完成工作與跨領域的優點。
+        </p><br>
 
-        <!---------- Form ---------->
-        <form method="post" action="mailto:karycklin@gmail.com?SUBJECT=Contact_Form" enctype="text/plain"
-            class="contactForm">
-            <h1>Contact Form</h1>
+        <li>為什麼想成為前端、後端、或全端工程師？</li>
+        <p>本身邏輯與整合能力很不錯，也非常喜歡把很雜亂看似沒有邏輯的資訊，試圖找出其邏輯並加以分析，再用簡單的圖表做出讓人可以一目了然的成果，前一份工作就常需要從網路收尋資訊在加以整理分析，因不會寫程式來快速搜尋，所以花費很多時間撈資料，後端的整理分析雖然可透過Excel的函數來整理分析，但若搭配程式，應該會更快與更有變化性，當時有想利用下班與假日自學，但時間實在太有限與本來工作量太多而一直無法精進這部份的能力，趁這次轉職，希望能成為做後端分析的軟體工程師，因為可以獨立作業，可以獨自分析或是解決技術性問題。
+        </p><br>
 
-            <div class="group">
-                <input type="text" name="" required>
-                <label>Your name</label>
-                <span class="icon">
-                    <i class="fa fa-user"></i>
-                </span>
-            </div>
+        <li>為了成為軟體工程師，曾經做過什麼努力？</li>
+        <p>在今年大年初一無意間知有扶持計畫，但已錯過時間點，因此開始透過免費資源(youtube)教學課程與書籍的內容來自學HTML、CSS、JavaScript…等網頁設計必備的程式語言，為了讓自己透過實際操作來發現自己不足之處，因此把<a
+                href="">自學的筆記</a>透過網頁呈現，一來用來練習與熟悉語法，二來可讓自己能消化與整合自學內容，另外也參考網頁分享的效果，來思考若自己架設一個<span><a
+                    href="">網站</a></span>，該如何配置與呈現，透過不斷地觀摩與練習，也可慢慢增進語法的撰寫方式與技巧，一開始也是跟著網站教學直接寫入語法，但慢慢對語法有感度以及更了解每個語法可呈現的效果後，便開始思考如何把語法寫得更活用不攏長，在練習過程中，也試著把一些常用的CSS效果整合起來，一來也幫助自己更快理解不同設定呈現的效果，二來可讓自己在構思網頁設計時能更快作出想呈現的效果，這些都是可以幫助自己的小工具。
+        </p><br>
 
-            <div class="group">
-                <input type="email" required>
-                <label>Your email</label>
-                <span class="icon">
-                    <i class="fa fa-envelope"></i>
-                </span>
-            </div>
+        <li>如果參與這個計畫，會怎麼安排學習時間？</li>
+        <p>今年4月前還在待業中，所以幾乎一天花至少12h在看影片與書籍學習，現在白天在工作，由於仍需一份穩定收入生活，暫時無法全心投入轉職，只能利用下班後幾小時與假日全心學習，預計利用下班後短暫的時間看書籍或教學網站學習，假日時間較充裕，可把平日學習的內容實作呈現，遇到問題也比較有時間能上網找資料解決。
+        </p><br>
 
-            <div class="group">
-                <textarea></textarea>
-                <label>Your message</label>
-                <span class="icon">
-                    <i class="fa fa-commenting"></i>
-                </span>
-            </div>
+        <li>如果參與這個計畫，預期會碰到什麼困難？你打算怎麼解決它？</li>
+        <p>最大的問題應該時間不足、對專業術語與知識的不足以及如何用轉業術語說出自己面臨的問題，還有程式語法的熟悉不夠，在年初還未找到工作前，那1個多月學習的經驗，基本知識的了解與每個語法的用意,
+            對我是必要的，這對日後寫語法的靈活度是重要的，因此我還是會花較多時間來補足這些專業的知識。利用關鍵字搜尋網路，透過前人分享的解決方法或去找每個語法的定義與應用原則來解決自己遇到的問題。</p><br>
 
-            <button type="submit">Sent</button>
+        <li>是否有想要加入的軟體公司？為什麼想加入該公司？</li>
+        <p>本身對Excel有非常有濃厚的興趣，若有機會想進入Microsoft研究Excel。</p><br>
 
-            <div class=" slogan">
-                <p>Wish you have a nice day !</p>
-            </div>
-        </form>
+        <li>想要對我們說的事情？</li>
+        <p>雖然我非本科系，年紀很大時才發現自己對寫程式有興趣，雖因一些因素才決定轉職，由於本身個性與經過近20年的工作養成，我不怕接觸新的知識與領域，只要給我機會與時間，我相信一定能在這領域可以做出一些成果的。</p>
+        <p>再看過"第一屆畢業校友轉職經歷分享直播與第二屆招生說明會"後，不斷思考與評估，自己轉職的機會，最大的變數是年紀太大，這是很現實與實際的問題，反問自己是否真的喜歡寫程式，這是肯定的，但有時候喜歡不見得一定要把它作為一個工作來養活自己，因此，我知道目前無法再次離職專心準備轉職，因為年紀，機會，運氣不見得會站在我這邊，但既然自己還是喜歡寫程式，我可以利用假日，慢慢把自己腦中的構想利用程式語言呈現出來，雖然明白自己現況無法邊工作邊準備轉職，但還是來參加申請，是希望能藉由這次機會，讓專業的你們，幫我審視一下，我學習程式語言的方向是否正確，還有哪些不足之處需要改進，以及後續持續自學，該補足那些知識與技能，能否請專業的你們給予我一些建議，感謝。
+        </p>
 
-    </div>
+    </ul>
+    <hr>
 
 </body>
 
