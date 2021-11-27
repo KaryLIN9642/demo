@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> <!-- for智慧手機 平板等裝置的設定，-->
+    <title>Background</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Over+the+Rainbow&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nova+Oval&display=swap');
+        /*
+            @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Vibes&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Kristi&display=swap');
+            */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "微軟正黑體";
+            /*
+                font-family: 'Poiret One', cursive;
+                font-family: 'Vibes', cursive;
+                font-family: 'Kristi', cursive;
+                */
+        }
+
+        hr {
+            height: .01em;
+            background: currentColor;
+            /*所有hr元素項文字一樣自動有相同顏色, 未來再用原生CSS控制顏色時, curentColor將會變得更實用*/
+        }
+
+        .container1 {
+            width: 1280px;
+            height: 720px;
+            border: 1px solid #000;
+            background: #fff url(bg.jpg) center center fixed no-repeat;
+            /*設定背景圖片的呈現方式*/
+            background-size: cover;
+            /*設定背景圖片的填滿方式*/
+        }
+
+        .container1 h1 {
+            font-family: 'Zhi Mang Xing', cursive;
+            color: bisque;
+            padding: 20px;
+        }
+
+        .container2 {
+            width: 1920px;
+            height: 1080px;
+            border: 1px solid #000;
+            background-image: url(VastSky.png), url(ChristmasTree.png), url(bg1.jpeg);
+            /*層疊背景*/
+        }
+
+        .container2 h1 {
+            font-family: 'Over the Rainbow', cursive;
+            color: bisque;
+            font-size: 10vw;
+        }
+
+        .container3 {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            padding: 0 100px;
+            background: #5b639c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 1s;
+        }
+
+        .container3 h1 {
+            font-family: 'Nova Oval', cursive;
+            color: bisque;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 15vw;
+            font-weight: 700;
+            transition: 1s;
+            text-decoration: none;
+            z-index: 1;
+        }
+
+        .container4 {
+            display: flex;
+            align-content: flex-start;
+            padding: 10px 20px;
+        }
+
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(#fb3, #58a);
+            margin-right: 10px;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(to right, #fb3, #58a);
+            margin-right: 10px;
+        }
+
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(to bottom right, #fb3, #58a);
+            margin-right: 10px;
+        }
+
+        .box4 {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, #fb3, #58a, yellowgreen);
+            margin-right: 10px;
+        }
+
+        .box5 {
+            width: 200px;
+            height: 100px;
+            background: radial-gradient(ellipse, #fb3, #58a);
+            margin-right: 10px;
+        }
+
+        .box6 {
+            width: 200px;
+            height: 100px;
+            background: radial-gradient(circle, #fb3, #58a);
+            margin-right: 10px;
+        }
+
+        .box7 {
+            width: 200px;
+            height: 100px;
+            background: #eee;
+            box-shadow: 3px 3px 9px yellow;
+            margin-right: 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+
+        .box8 {
+            width: 200px;
+            height: 100px;
+            background: #eee;
+            box-shadow: 0px 0px 9px green;
+            margin-right: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box9 {
+            width: 200px;
+            height: 100px;
+            background: #eee;
+            box-shadow: -3px -3px 9px pink;
+            margin-right: 20px;
+        }
+
+        .box10 {
+            width: 200px;
+            height: 50px;
+            background: #58a;
+        }
+
+        .box11 {
+            width: 200px;
+            height: 50px;
+            background: yellowgreen;
+            margin-right: 20px;
+            transform: translate(24px, 14px);
+            position: relative;
+            left: -200px;
+            margin-bottom: 50px;
+        }
+
+        .box12 {
+            width: 200px;
+            height: 50px;
+            background: yellowgreen;
+            opacity: 0.8;
+            margin-right: 20px;
+            transform: scale(1, 1.5);
+            position: relative;
+            left: -200px;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .box13 {
+            width: 200px;
+            height: 50px;
+            background: yellowgreen;
+            margin-right: 20px;
+            transform: rotate(10deg);
+            position: relative;
+            left: -200px;
+            margin-bottom: 50px;
+        }
+
+        .box14 {
+            width: 200px;
+            height: 50px;
+            background: yellowgreen;
+            margin-right: 20px;
+            transform: skew(-10deg, -10deg);
+            position: relative;
+            left: -200px;
+            margin-bottom: 50px;
+        }
+
+        .box15 {
+            width: 200px;
+            height: 50px;
+            background: yellowgreen;
+            margin-right: 20px;
+            transform: skewX(-10deg);
+            position: relative;
+            left: -200px;
+            margin-bottom: 50px;
+        }
+
+        .box16 {
+            width: 200px;
+            height: 50px;
+            background: yellowgreen;
+            margin-right: 20px;
+            transform: skewY(-10deg);
+            position: relative;
+            left: -200px;
+            margin-bottom: 50px;
+        }
+
+        .box17 {
+            width: 200px;
+            height: 50px;
+            background: darkcyan;
+            position: relative;
+            animation: anime1 5s linear infinite alternate;
+        }
+
+        @keyframes anime1 {
+            from {
+                left: 0%
+            }
+
+            to {
+                left: 80%
+            }
+        }
+
+        .box18 {
+            width: 200px;
+            height: 50px;
+            background: palevioletred;
+            position: relative;
+            animation: anime2 3s linear infinite alternate;
+        }
+
+        @keyframes anime2 {
+            from {
+                left: 0%;
+                background-color: palevioletred
+            }
+
+            to {
+                left: 60%;
+                background-color: yellowgreen
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container1">
+        <h1>背景圖片自動隨著瀏覽視窗大小縮放The background image is automatically scaled with the size of the browser window</h1>
+    </div><br>
+    <hr>
+
+    <div class="container2">
+        <h1>Multiple backgrounds</h1>
+    </div><br>
+    <hr>
+
+    <div class="container3">
+        <img src="bg2.jpg" class="banner">
+        <h1>banner</h1>
+    </div>
+    <hr>
+
+    A.線性漸層：background: linear-gradient(方向,顏色1,顏色2, ......)
+    <div class="container4">
+        <div class="box1">上而下</div>
+        <div class="box2">左而右</div>
+        <div class="box3">左下向右上</div>
+        <div class="box4">角度調整</div>
+    </div>
+    <hr>
+    B.徑向漸層：background: radial-gradient(ellipse 或 circle,顏色1,顏色2, ......)
+    <div class="container4">
+        <div class="box5">橢圓形(ellipse)漸層</div>
+        <div class="box6">圓形(circle)漸層</div>
+    </div>
+    <hr>
+
+    C.區塊陰影效果：box-shadow:inset offset-x offset-y blur-radius spread-radius 陰影顏色
+    <div class="container4">
+        <div class="box7">右下</div>
+        <div class="box8">正下方</div>
+        <div class="box9">左上</div>
+    </div>
+    <hr>
+    D.transform呈現出旋轉（rotate）、縮放（scale）、移動（move）以及傾斜（skew）的特殊效果
+    <div class="container4">
+        <div class="box10">original</div>
+        <div class="box11">translate(x,y)轉換區塊x 24px, y 14px</div>
+
+        <div class="box10">original</div>
+        <div class="box12">scale(x,y)縮放x 1倍, y 1.5倍</div>
+
+        <div class="box10">original</div>
+        <div class="box13">rotate(deg)旋轉10度</div><br>
+    </div>
+
+    <div class="container4">
+        <div class="box10">original</div>
+        <div class="box14">skew(x,y)傾斜x,y各-10度</div>
+
+        <div class="box10">original</div>
+        <div class="box15">skewX(deg)沿著X軸方向傾斜-10度</div>
+
+        <div class="box10">original</div>
+        <div class="box16">skewY(deg)沿著y軸方向傾斜-10度</div>
+    </div>
+    <hr>
+    E.動畫效果animation語法: animation: name duration timing-function delay iteration-count direction;
+    關鍵影格@keyframes語法: @keyframes 動畫名稱{行徑程度{產生的變化值}}
+    <div class="container4">
+        <div class="box17"></div>
+        <div class="box18"></div>
+    </div>
+    <hr><br>
+</body>
+
+</html>
+
+<!-- HTML註解 -->
+<html lang="zh-Hant-TW">
+<!-- 指繁體中文，若架設英文網站可設定為lang="en" -->

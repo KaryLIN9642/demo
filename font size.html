@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Font size effect</title>
+    <style type="text/css">
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            font-family: "微軟正黑體";
+            margin: 30px;
+            border: 1px;
+        }
+
+        hr {
+            height: .01em;
+            background: currentColor;
+            /*所有hr元素項文字一樣自動有相同顏色, 未來再用原生CSS控制顏色時, curentColor將會變得更實用*/
+        }
+    </style>
+</head>
+
+<body>
+    <h2>1.px</h2>
+    <p>px 是絕對單位，因此只要設定多少 px，就會精確的呈現，對於一些講求精準位置的排版而言十分有用，如範例表示的，指定多大 px 字體就會多大。</p>
+    <div style="font-size: 16px;">16px
+        <div style="font-size: 20px;">20px
+            <div style="font-size: 24px;">24px
+                <div style="font-size: 16px;">16px
+                    <div style="font-size: 32px;">32px</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h2>2.em</h2>
+    <p>em 是相對單位，為每個子元素透過「倍數」乘以父元素的 px 值，如果我們每一層 div 都使用 1.2em，最內層就會是16px * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 = 39.8px。(
+        瀏覽器預設字體大小為
+        16px，若無特別指定則會直接繼承父元素字體大小 )</p>
+    <div style="font-size:1.2em;">1.2em
+        <div style="font-size:1.2em;">1.2em
+            <div style="font-size:1.2em;">1.2em
+                <div style="font-size:1.2em;">1.2em
+                    <div style="font-size:1.2em;">1.2em</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h2>3.rem</h2>
+    <p>rem 是相對單位，為每個元素透過「倍數」乘以根元素的 px 值，如果我們每一層 div 都使用 1.2rem，最內層就會是16px * 1.2 = 19.2px。( 根元素指的是 html 的 font-size，預設為
+        16px )。</p>
+    <div style="font-size:1.2rem;">1.2rem
+        <div style="font-size:1.2rem;">1.2rem
+            <div style="font-size:1.2rem;">1.2rem
+                <div style="font-size:1.2rem;">1.2rem
+                    <div style="font-size:1.2rem;">1.2rem</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h2>4. %</h2>
+    <p>% 百分比是相對單位，和 em 大同小異，簡單來說 em 就是百分比除以一百，如果我們每一層 div 都使用 120%，就等同於 1.2em，最內層就會是16px x 1.2 x 1.2 x 1.2 x 1.2 x 1.2 =
+        39.8px。</p>
+    <div style="font-size:120%;">120%
+        <div style="font-size:120%;">120%
+            <div style="font-size:120%;">120%
+                <div style="font-size:120%;">120%
+                    <div style="font-size:120%;">120%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h2>5. small、medium、large...等</h2>
+    <p>字體大小的屬性有七種，分別是 xx-small、x-small、small、medium、large、x-large 和 xx-large，除了 x-small，其餘六種分別對應 h6~h1 的標籤文字大小，根據 W3C
+        的規範，以
+        medium 預設 16px 為基礎 ( 若 html 字體預設大小改變，medium 也會跟著變 )，使用固定的百分比乘以 medium 的大小，例如 ss-small 預設為16px x 0.6 = 9.6px (
+        瀏覽器顯示為
+        12px )。</p>
+    <img src="css-font-size-05.jpg">
+    <div style="font-size:xx-small;">xx-small (0.6rem)
+        <div style="font-size:x-small;">x-small (0.75rem)
+            <div style="font-size:small;">small (0.8rem)
+                <div style="font-size:medium;">medium (1rem)
+                    <div style="font-size:large;">large (1.1rem)
+                        <div style="font-size:x-large;">x-large (1.5rem)
+                            <div style="font-size:xx-large;">xx-large (2rem)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h2>6. larger、smaller</h2>
+    <p>larger 和 smaller 就是固定百分比為單位，larger 為父層的 120%，smaller 為父層的 80%。</p>
+    <div style="font-size:medium;">medium
+        <div style="font-size:larger;">larger (120%)
+            <div style="font-size:larger;">larger (120%)
+                <div style="font-size:larger;">larger (120%)
+                    <div style="font-size:smaller;">smaller (80%)
+                        <div style="font-size:smaller;">smaller(80%)
+                            <div style="font-size:smaller;">smaller (80%)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+
+
+</body>
+
+</html>

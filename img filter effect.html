@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>img filter effect</title>
+    <style type="text/css">
+        body {
+            font-family: "微軟正黑體";
+            margin: 30px;
+            border: 10px;
+        }
+
+        hr {
+            height: .01em;
+            background: currentColor;
+            /*所有hr元素項文字一樣自動有相同顏色, 未來再用原生CSS控制顏色時, curentColor將會變得更實用*/
+        }
+
+        span {
+            color: red;
+        }
+
+        .box {
+            display: flex;
+            align-content: flex-start;
+            padding: 10px 20px;
+        }
+
+        .img1 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: grayscale(0%);
+            margin-right: 10px;
+        }
+
+        .img1-50 {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: grayscale(50%);
+            margin-right: 10px;
+        }
+
+        .img1-100 {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: grayscale(100%);
+        }
+
+        .img2 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: blur(1px);
+            margin-right: 10px;
+        }
+
+        .img2-1 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: blur(2px);
+            margin-right: 10px;
+        }
+
+        .img2-2 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: blur(3px);
+            margin-right: 10px;
+        }
+
+        .img2-3 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: blur(4px);
+            margin-right: 10px;
+        }
+
+        .img2-4 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: blur(5px);
+            margin-right: 30px;
+        }
+
+        .img2-5 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+        }
+
+        .img2-6 {
+            backdrop-filter: blur(5px);
+            border: 1px dashed #fff;
+            padding: 5px;
+            width: 120px;
+            height: 130px;
+            position: relative;
+            left: -140px;
+            top: 5px;
+        }
+
+        .img3 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: brightness(50%);
+            margin-right: 10px;
+        }
+
+        .img3-1 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: brightness(150%);
+            margin-right: 10px;
+        }
+
+        .img3-2 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: brightness(200%);
+        }
+
+        .img3-3 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: brightness(300%);
+            margin-right: 30px;
+        }
+
+        .img3-4 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+        }
+
+        .img3-5 {
+            backdrop-filter: brightness(50%);
+            border: 1px dashed #fff;
+            padding: 5px;
+            width: 120px;
+            height: 130px;
+            position: relative;
+            left: -140px;
+            top: 5px;
+            color: gray;
+        }
+
+        .img4 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: contrast(50%);
+            margin-right: 10px;
+        }
+
+        .img4-1 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: contrast(150%);
+            margin-right: 10px;
+        }
+
+        .img4-2 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: contrast(200%);
+            margin-right: 10px;
+        }
+
+        .img4-3 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: contrast(300%);
+            margin-right: 30px;
+        }
+
+        .img4-4 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+        }
+
+        .img4-5 {
+            backdrop-filter: contrast(50%);
+            border: 1px dashed #fff;
+            padding: 5px;
+            width: 120px;
+            height: 130px;
+            position: relative;
+            left: -140px;
+            top: 5px;
+            color: #fff;
+        }
+
+        .img5 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: drop-shadow(8px 8px 10px red);
+            margin-right: 40px;
+        }
+
+        .img5-1 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: drop-shadow(0px 0px 10px red);
+            margin-right: 40px;
+        }
+
+        .img5-2 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: drop-shadow(10px 0px 15px red);
+            margin-right: 30px;
+        }
+
+        .img5-3 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+        }
+
+        .img5-4 {
+            backdrop-filter: drop-shadow(20px 10px red);
+            border: 1px dashed #fff;
+            padding: 5px;
+            width: 120px;
+            height: 130px;
+            position: relative;
+            left: -140px;
+            top: 5px;
+            color: white;
+        }
+
+
+        .img6 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: hue-rotate(90deg);
+            margin-right: 10px;
+        }
+
+        .img6-1 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: hue-rotate(180deg);
+            margin-right: 10px;
+        }
+
+        .img6-2 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: hue-rotate(270deg);
+            margin-right: 10px;
+        }
+
+        .img6-3 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: hue-rotate(360deg);
+        }
+
+        .img7 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: invert(10%);
+            margin-right: 10px;
+        }
+
+        .img7-1 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: invert(20%);
+            margin-right: 10px;
+        }
+
+        .img7-2 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: invert(40%);
+            margin-right: 10px;
+        }
+
+        .img7-3 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: invert(80%);
+            margin-right: 10px;
+        }
+
+        .img7-4 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: invert(100%);
+        }
+
+        .img8 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: opacity(0.1);
+            margin-right: 10px;
+        }
+
+        .img8-1 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: opacity(0.2);
+            margin-right: 10px;
+        }
+
+        .img8-2 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: opacity(0.5);
+            margin-right: 10px;
+        }
+
+        .img8-3 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: opacity(0.7);
+            margin-right: 10px;
+        }
+
+        .img8-4 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: opacity(0.9);
+        }
+
+        .img9 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: saturate(1.5);
+            margin-right: 10px;
+        }
+
+        .img9-1 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: saturate(2);
+            margin-right: 10px;
+        }
+
+        .img9-2 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: saturate(5);
+            margin-right: 10px;
+        }
+
+        .img9-3 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: saturate(8);
+        }
+
+        .img10 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: sepia(.1);
+            margin-right: 10px;
+        }
+
+        .img10-1 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: sepia(.2);
+            margin-right: 10px;
+        }
+
+        .img10-2 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: sepia(.5);
+            margin-right: 10px;
+        }
+
+        .img10-3 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: sepia(.8);
+            margin-right: 10px;
+        }
+
+        .img10-4 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: sepia(1);
+        }
+
+        .img11 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: contrast(200%) brightness(150%);
+            margin-right: 10px;
+        }
+
+        .img11-1 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: contrast(200%);
+            margin-right: 10px;
+        }
+
+        .img11-2 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            filter: brightness(150%);
+        }
+
+        .img12 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+        }
+
+        .img12-1 {
+            position: relative;
+            top: -10px;
+            left: -160px;
+            width: 15%;
+            height: 180px;
+            backdrop-filter: blur(5px);
+            z-index: 1;
+            box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .img12-2 {
+            width: 150px;
+            height: 150px;
+            background-image: url("P9071294_150x150.jpg");
+            margin-left: 10px;
+            filter: blur(5px);
+        }
+
+        .img13 {
+            width: 750px;
+            height: 300px;
+            background-image: url("P9071294_150x150.jpg");
+            background-repeat: repeat;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .img13-1 {
+            backdrop-filter: blur(5px);
+            border: 1px solid #fff;
+            padding: 5px;
+            width: 120px;
+            height: 130px;
+        }
+
+        .img13-2 {
+            backdrop-filter: brightness(0.25);
+            border: 1px solid #fff;
+            color: #fff;
+            padding: 5px;
+            width: 120px;
+            height: 130px;
+        }
+
+        .img13-3 {
+            backdrop-filter: contrast(0.2);
+            border: 1px solid #fff;
+            padding: 5px;
+            width: 120px;
+            height: 130px;
+        }
+
+        .img13-4 {
+            backdrop-filter: drop-shadow(20px 10px red);
+            border: 1px solid #fff;
+            padding: 5px;
+            color: red;
+            width: 120px;
+            height: 130px;
+        }
+
+        .img13-5 {
+            backdrop-filter: grayscale(0.75);
+            border: 1px solid #fff;
+            padding: 5px;
+            color: #fff;
+            width: 120px;
+            height: 130px;
+        }
+
+        .img13-6 {
+            backdrop-filter: hue-rotate(180deg);
+            border: 1px solid #fff;
+            padding: 5px;
+            color: #fff;
+            width: 120px;
+            height: 130px;
+        }
+
+        .img13-7 {
+            backdrop-filter: invert(1);
+            border: 1px solid #fff;
+            padding: 5px;
+            width: 120px;
+            height: 130px;
+        }
+
+        .img13-8 {
+            backdrop-filter: opacity(0.5);
+            border: 1px solid #fff;
+            padding: 5px;
+            color: #fff;
+            width: 120px;
+            height: 130px;
+        }
+
+        .img13-9 {
+            backdrop-filter: saturate(0.5);
+            border: 1px solid #fff;
+            padding: 5px;
+            color: #fff;
+            width: 120px;
+            height: 130px;
+        }
+
+        .img13-10 {
+            backdrop-filter: sepia(1);
+            border: 1px solid #fff;
+            padding: 5px;
+            color: #fff;
+            width: 120px;
+            height: 130px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="P9071294_150x150.jpg" alt="Handsome guy">original
+    <hr>
+    1. 轉換為灰度圖像：grayscale( % ), 0％ (0)是預設的，表示原始圖像。100％將會使圖像完全灰化(used for black and white images)。例子：grayscale 0%, 50%,
+    100%
+    <div class="box">
+        <div class="img1"></div>
+        <div class="img1-50"></div>
+        <div class="img1-100"></div>
+    </div>
+    <hr>
+
+    2. 應用模糊效果的圖像：blur( px ), 較大的值會產生更多的模糊, 例子：blur 1px, 2px, ,3px, 4px, 5px
+    <div class="box">
+        <div class="img2"></div>
+        <div class="img2-1"></div>
+        <div class="img2-2"></div>
+        <div class="img2-3"></div>
+        <div class="img2-4"></div>
+        <div class="img2-5"></div>
+        <div class="img2-6">backdrop-filter: blur 5px</div>
+    </div>
+    <hr>
+    3. 調整圖像的亮度：brightness( % ), 0％將使圖像全黑, 100％ (1)是預設的，表示原始圖像。超過100％的值將提供更亮的結果。
+    例子：brightness 50%, 150%, 200%, 300%
+    <div class="box">
+        <div class="img3"></div>
+        <div class="img3-1"></div>
+        <div class="img3-2"></div>
+        <div class="img3-3"></div>
+        <div class="img3-4"></div>
+        <div class="img3-5">backdrop-filter:brightness 50%</div>
+    </div>
+    <hr>
+
+    4. 調整圖像的對比度：contrast( % ), 0％將使圖像全黑, 100％ (1)是預設的，表示原始圖像。超過100％的值將提供的結果與較少的對比。
+    例子：contrast 50%, 150%, 200%, 300%
+    <div class="box">
+        <div class="img4">50%</div>
+        <div class="img4-1">150%</div>
+        <div class="img4-2">200%</div>
+        <div class="img4-3">300%</div>
+        <div class="img4-4"></div>
+        <div class="img4-5">backdrop-filter:contrast 50%</div>
+    </div>
+    <hr>
+
+    5. 適用陰影效果的圖像：drop-shadow( h-shadow v-shadow blur spread color ),<br>
+    H-陰影 -必需。指定水平陰影的像素值。 負值陰影放置在圖像的左側。<br>
+    V-陰影 -必需。指定垂直陰影的像素值。 負值放置圖像上方的陰影。<br>
+    blur-可選。必須以像素為單位。添加一個模糊效果的陰影。較大的值會產生更多的模糊（陰影變得更大，更輕）。<span>注意：負值是不允許的。</span>如果沒有指定值，默認值為0（陰影的邊緣銳利）。<br>
+    spread-可選。必須在像素。正值將使陰影擴展和增長更大，負值將使陰影收縮。如果未指定，這將是0 (the shadow will be the same size as the element)。<br>
+    color-可選。如果未指定，則顏色取決於瀏覽器(often black)。
+    創造一個紅影，其水平和垂直方向為8像素大，與10px的的模糊效果的例子：drop-shadow(8px 8px 10px red),(0px 0px 10px red), (10px 0px 15px red)
+    <div class="box">
+        <div class="img5"></div>
+        <div class="img5-1"></div>
+        <div class="img5-2"></div>
+        <div class="img5-3"></div>
+        <div class="img5-4">backdrop-filter:drop-shadow (20px 10px red)</div>
+    </div>
+    <hr>
+
+    6. 應用該圖像上的色調旋轉：hue-rotate( deg ),應用於所述圖像上的色調旋轉。該值定義沿色環圖像樣本將被調整的度數。0deg是預設值，表示原始圖像。<span>最大值為360deg</span>
+    例子：hue-rotate 90deg, 180deg, 270deg, 360deg
+    <div class="box">
+        <div class="img6"></div>
+        <div class="img6-1"></div>
+        <div class="img6-2"></div>
+        <div class="img6-3"></div>
+    </div>
+    <hr>
+
+    7. 反轉圖像中的樣本：invert( % ), 0％ (0)是預設的，表示原始圖像。100％將使圖像完全反轉。<span>注意：負值是不允許的。</span>
+    例子：invert 10%, 20%, 40%, 80%, 100%
+    <div class="box">
+        <div class="img7"></div>
+        <div class="img7-1"></div>
+        <div class="img7-2"></div>
+        <div class="img7-3"></div>
+        <div class="img7-4"></div>
+    </div>
+    <hr>
+
+    8. 設置圖像的透明度級別：opacity( % ), 0％是完全透明的。100％ (1)是預設的，表示在原始圖像(no transparency)。<span>注意：負值是不允許的。</span>
+    例子：opacity 0.1, 0.2, 0.5, 0.7, 0.9
+    <div class="box">
+        <div class="img8"></div>
+        <div class="img8-1"></div>
+        <div class="img8-2"></div>
+        <div class="img8-3"></div>
+        <div class="img8-4"></div>
+    </div>
+    <hr>
+
+    9. 飽和的圖像：saturate( % ), 0％ (0)將使圖像完全不飽和的。100％是預設和表示原始圖像。超過100％的值提供超飽和的結果。<span>注意：負值是不允許的。</span>
+    例子：saturate 1.5, 2, 5, 8
+    <div class="box">
+        <div class="img9"></div>
+        <div class="img9-1"></div>
+        <div class="img9-2"></div>
+        <div class="img9-3"></div>
+    </div>
+    <hr>
+
+    10. 將圖像轉換為棕褐色：sepia( % ), 0％ (0)是預設的，表示原始圖像。100％將使圖像完全棕褐色。<span>注意：負值是不允許的。</span>
+    例子：sepia 0.1, 0.2, 0.5, 0.8, 1
+    <div class="box">
+        <div class="img10"></div>
+        <div class="img10-1"></div>
+        <div class="img10-2"></div>
+        <div class="img10-3"></div>
+        <div class="img10-4"></div>
+    </div>
+    <hr>
+
+    11. 合併過濾器：要使用多個過濾器，每個濾波器用空格分隔。<span>注：順序很重要(ie using grayscale()後， sepia()將導致一個完全灰度圖像）</span>
+    例子：contrast(200%) brightness(150%)
+    <div class="box">
+        <div class="img11"></div>
+        ＝
+        <div class="img11-1"></div>
+        +
+        <div class="img11-2"></div>
+    </div>
+    <hr>
+
+    12. 比較filer & backdrop-filter差異
+    <div class="box">
+        <div class="glass"></div>
+        <div class="glass1"></div>
+    </div>
+    <div class="box">
+        <div class="img12"></div>
+        <div class="img12-1"></div>
+        <div class="img12-2"></div>
+    </div>
+    <hr>
+
+    13. backdrop-filter效果：<br>
+    backdrop-filter:blur()：用於將高斯模糊應用於圖像。此功能的預設值為0，不應用任何模糊效果。 | <br>
+    brightness()：用於使圖像更亮或更暗。值超過100％將使圖像變亮，而值低於100％將使圖像變暗。如果亮度變為0％，它將完全使圖像變黑。|<br>
+    contrast()：它用於設置圖像的對比度。原始圖像的對比度為100％。如果對比度低於0％，將使圖像完全變黑 | <br>
+    drop-shadow()：用於對元素應用陰影效果。它接受水平和垂直陰影量以及散布和顏色值。 |<br>
+    grayscale()：用於將圖像的顏色轉換為黑白。值為0％表示原始圖像，值為100％表示完全黑白圖像。 |<br>
+    hue-rotate()：用於將色調旋轉應用於圖像。函數值表示將調整圖像圓的色環周圍的度數。預設值為0，表示原始圖像。 |<br>
+    invert()：用於反轉圖像。預設值是0％，代表原始圖像，而100％將使圖像完全反轉。 |<br>
+    opacity()：它用於設置圖像的不透明度。預設值為0％，表示圖像是完全透明的，而100％的值表示原始圖像是完全不透明的。|<br>
+    saturate()：用於設置元素的飽和度。預設值為100％，表示原始圖像。 0％的值表示完全不飽和的圖像，而100％以上的值表示super-saturated圖像 |<br>
+    sepia()：它用於將圖像轉換為棕褐色，使圖像看起來更溫暖。 0％的值表示原始圖像，而100％的值表示完整的棕褐色圖像。 |<br>
+    none | initial:它用於將此屬性設置為其預設值。 | inherit:它從其父元素繼承屬性。
+    <div class="box">
+        <div class="img13">
+            <div class="img13-1">blur 5px</div>
+            <div class="img13-2">brightness 25%</div>
+            <div class="img13-3">contrast 20%</div>
+            <div class="img13-4">drop-shadow(20px 10px red)</div>
+            <div class="img13-5">grayscale(75%)</div>
+            <div class="img13-6">hue-rotate(180deg)</div>
+            <div class="img13-7">invert(100%)</div>
+            <div class="img13-8">opacity(50%)</div>
+            <div class="img13-9">saturate(50%)</div>
+            <div class="img13-10">sepia(100%)</div>
+        </div>
+    </div>
+    <hr>
+</body>
+
+
+</html>
